@@ -14,7 +14,6 @@ C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-aut
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\TestProject - ebay-automation.runtimeconfig.json
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\TestProject - ebay-automation.runtimeconfig.dev.json
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\TestProject - ebay-automation.dll
-C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\ref\TestProject - ebay-automation.dll
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\TestProject - ebay-automation.pdb
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\bin\Debug\net5.0\Microsoft.TestPlatform.CoreUtilities.dll
@@ -102,3 +101,4 @@ C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-aut
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\obj\Debug\net5.0\ref\TestProject - ebay-automation.dll
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\obj\Debug\net5.0\TestProject - ebay-automation.pdb
 C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\obj\Debug\net5.0\TestProject - ebay-automation.genruntimeconfig.cache
+C:\Users\rafae\source\repos\TestProject - ebay-automation\TestProject - ebay-automation\obj\Debug\net5.0\refint\TestProject - ebay-automation.dll

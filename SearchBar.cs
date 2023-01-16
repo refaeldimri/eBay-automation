@@ -1,16 +1,11 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestProject___ebay_automation
 {
     class SearchBar
     {
-        public ChromeDriver chromeDriver;
+        public IWebDriver iWebDriver;
         private string productToSearch = "mouse";
         public string ProductToSearch   // property
         {
@@ -24,27 +19,32 @@ namespace TestProject___ebay_automation
             }   // get method
             set { productToSearch = value; }  // set method
         }
-        public SearchBar(ChromeDriver chromeDriver)
+        public SearchBar(IWebDriver iWebDriver)
         {
-            this.chromeDriver = chromeDriver;
+            this.iWebDriver = iWebDriver;
         }
         public IList<IWebElement> GetResult()
         {
             try
             {
                 // Navigate to Url
-                chromeDriver.Navigate().GoToUrl("https://www.ebay.com");
+                iWebDriver.Navigate().GoToUrl("https://www.ebay.com");
 
                 // find elements with id = "gc-ac" (search bar) and put him <<productToSearch>>
-                chromeDriver.FindElement(By.Id("gh-ac")).SendKeys(productToSearch);
+                iWebDriver.FindElement(By.Id("gh-ac")).SendKeys(productToSearch);
 
                 // find elements with id = "gh-btn" (search button) and click it
-                chromeDriver.FindElement(By.Id("gh-btn")).Click();
+                iWebDriver.FindElement(By.Id("gh-btn")).Click();
 
-                // Get all the list of search results of <<productToSearch>>
+                // find input for price and put "50"
+                iWebDriver.FindElement(By.XPath("//input[@class='textbox__control']")).SendKeys("50");
+
+                // find price filter's button and click it
+                iWebDriver.FindElement(By.XPath("//button[@title=\"Submit price range\"]")).Click();
+
+                // Get all the list of search results of <<productToSearch>> after filtering
                 IList<IWebElement> elements =
-                    chromeDriver.FindElements(By.XPath("//div[contains(@class,'s-item__wrapper clearfix')]"));
-
+                    iWebDriver.FindElements(By.XPath("//div[@class=\"s-item__wrapper clearfix\"]"));
                 return elements;
             }
             finally
@@ -54,7 +54,7 @@ namespace TestProject___ebay_automation
         }
         public void QuitDriver()
         {
-            chromeDriver.Quit();
+            iWebDriver.Quit();
         }
     }
 }

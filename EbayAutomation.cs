@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace TestProject___ebay_automation
     class EbayAutomation
     {
         public HomePage homePage;
-        public EbayAutomation(ChromeDriver chromeDriver)
+        public EbayAutomation(IWebDriver iWebDriver)
         {
-            this.homePage = new HomePage(chromeDriver);
+            this.homePage = new HomePage(iWebDriver);
         }
     }
 }

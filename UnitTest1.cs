@@ -1,23 +1,45 @@
+using Guru99Demo;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System.Collections.Generic;
 
 namespace TestProject___ebay_automation
 {
     public class Tests
     {
-        ChromeDriver chromeDriver = new ChromeDriver();
+        BrowserFactory browserFactory;
         EbayAutomation ebayAutomation;
+
         [SetUp]
         public void Setup()
         {
-            ebayAutomation = new EbayAutomation(chromeDriver);
+             browserFactory = new BrowserFactory();
+        }
+        [Test]
+        public void TestChrome()
+        {
+            browserFactory.InitBrowser("Chrome");
+            ebayAutomation = new EbayAutomation(browserFactory.Drivers["CHROME"]);
+            ebayAutomation.homePage.searchBar.ProductToSearch = "mouse";
+            IList<IWebElement> elementsFromEbay = ebayAutomation.homePage.searchBar.GetResult();
+            Assert.IsTrue(elementsFromEbay.Count > 0);
         }
 
         [Test]
-        public void Test()
+        public void TestExploror()
         {
+            browserFactory.InitBrowser("Ie");
+            ebayAutomation = new EbayAutomation(browserFactory.Drivers["IE"]);
+            ebayAutomation.homePage.searchBar.ProductToSearch = "mouse";
+            IList<IWebElement> elementsFromEbay = ebayAutomation.homePage.searchBar.GetResult();
+            Assert.IsTrue(elementsFromEbay.Count > 0);
+        }
+
+        [Test]
+        public void TestFireFox()
+        {
+            browserFactory.InitBrowser("Firefox");
+            ebayAutomation = new EbayAutomation(browserFactory.Drivers["FIREFOX"]);
             ebayAutomation.homePage.searchBar.ProductToSearch = "mouse";
             IList<IWebElement> elementsFromEbay = ebayAutomation.homePage.searchBar.GetResult();
             Assert.IsTrue(elementsFromEbay.Count > 0);
