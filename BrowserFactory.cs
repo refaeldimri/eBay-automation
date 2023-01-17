@@ -4,7 +4,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System.Collections.Generic;
 
-namespace Guru99Demo
+namespace TestProject___ebay_automation
 {
     public class BrowserFactory
     {

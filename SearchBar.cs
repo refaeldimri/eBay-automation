@@ -6,7 +6,7 @@ namespace TestProject___ebay_automation
     class SearchBar
     {
         public IWebDriver iWebDriver;
-        private string productToSearch = "mouse";
+        private string productToSearch;
         public string ProductToSearch   // property
         {
             get
@@ -30,6 +30,9 @@ namespace TestProject___ebay_automation
                 // Navigate to Url
                 iWebDriver.Navigate().GoToUrl("https://www.ebay.com");
 
+                // maximaize to window
+                iWebDriver.Manage().Window.Maximize();
+
                 // find elements with id = "gc-ac" (search bar) and put him <<productToSearch>>
                 iWebDriver.FindElement(By.Id("gh-ac")).SendKeys(productToSearch);
 
@@ -49,7 +52,7 @@ namespace TestProject___ebay_automation
             }
             finally
             {
-                QuitDriver();
+                //QuitDriver();
             }
         }
         public void QuitDriver()
